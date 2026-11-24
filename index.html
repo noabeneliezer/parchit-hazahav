@@ -287,10 +287,10 @@ async function send(){
   const payload={_subject:`הצבעה לטקס פרכית הזהב${name?" – "+name:""}`,_template:"table",_captcha:"false","שם":name||"(לא צוין)"};
   questions.forEach((x,i)=>payload[`${i+1}. ${x.q}`]=answers[i]);
   try{
-    /* FormSubmit can be slow to reply even though the email is sent: after 6s we move on to the closing slide */
+    /* FormSubmit can be slow to reply even though the email is sent: after 2.5s we move on to the closing slide */
     const req=fetch("https://formsubmit.co/ajax/"+EMAIL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(payload)})
       .then(async r=>{const j=await r.json().catch(()=>({}));if(!r.ok||j.success==="false"||j.success===false) throw new Error(j.message||"fail");return "ok";});
-    const slow=new Promise(res=>setTimeout(()=>res("slow"),6000));
+    const slow=new Promise(res=>setTimeout(()=>res("slow"),2500));
     await Promise.race([req,slow]);
     req.catch(()=>{});
     outro();
