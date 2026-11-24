@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>טקס פרכית הזהב 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;700;900&family=Heebo:wght@300;400;600&family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#7a0a14; --red-deep:#3d0409; --red-bright:#b3121f;
+  --gold:#e8c46a; --gold-light:#fff0b8; --gold-dark:#a87f22;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{
+  font-family:'Heebo',sans-serif; color:var(--gold-light);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(255,220,120,.35), transparent 55%),
+    radial-gradient(ellipse at 50% 120%, #1f0205, transparent 60%),
+    repeating-linear-gradient(90deg, var(--red-deep) 0 38px, var(--red) 38px 76px, var(--red-deep) 76px 114px);
+  background-attachment:fixed;
+  display:flex;align-items:center;justify-content:center;
+  padding:16px; overflow-x:hidden; min-height:100vh;
+}
+/* curtain edges */
+body::before,body::after{content:"";position:fixed;top:0;bottom:0;width:7vw;max-width:90px;z-index:0;pointer-events:none;
+  background:repeating-linear-gradient(90deg,rgba(0,0,0,.55) 0 8px,rgba(255,255,255,.05) 8px 16px,rgba(0,0,0,.4) 16px 26px)}
+body::before{right:0;box-shadow:-10px 0 30px rgba(0,0,0,.6)}
+body::after{left:0;box-shadow:10px 0 30px rgba(0,0,0,.6)}
+
+.stage{position:relative;z-index:1;width:100%;max-width:640px}
+.card{
+  position:relative;text-align:center;padding:36px 24px 30px;
+  background:linear-gradient(160deg,rgba(90,6,14,.92),rgba(40,2,6,.96));
+  border:2px solid var(--gold);border-radius:6px;
+  box-shadow:0 0 0 6px rgba(0,0,0,.35),0 0 0 8px var(--gold-dark),0 25px 70px rgba(0,0,0,.7),inset 0 0 60px rgba(0,0,0,.5);
+  animation:rise .7s ease both;
+}
+.card::before{content:"";position:absolute;inset:8px;border:1px solid rgba(232,196,106,.45);pointer-events:none}
+@keyframes rise{from{opacity:0;transform:translateY(24px) scale(.97)}to{opacity:1;transform:none}}
+
+.gold-text{
+  background:linear-gradient(180deg,#fff7d1 0%,#e8c46a 45%,#a87f22 55%,#f3d98a 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.6));
+}
+.serif{font-family:'Frank Ruhl Libre',serif}
+.statue{width:74px;height:auto;margin:0 auto 6px;display:block;filter:drop-shadow(0 4px 10px rgba(232,196,106,.55))}
+.eyebrow{letter-spacing:.35em;font-size:.8rem;color:var(--gold);margin-bottom:8px}
+h1{font-size:clamp(2rem,8vw,3.2rem);font-weight:900;line-height:1.15;margin:6px 0 14px}
+.sub{font-size:1.1rem;line-height:1.7;color:var(--gold-light);font-weight:300}
+.divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--gold)}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+.btn{
+  font-family:'Frank Ruhl Libre',serif;font-weight:700;font-size:1.2rem;cursor:pointer;
+  padding:13px 34px;border-radius:40px;border:1px solid var(--gold-light);color:#3a0508;
+  background:linear-gradient(180deg,#fff0b8,#e8c46a 50%,#b88a2a);
+  box-shadow:0 6px 20px rgba(0,0,0,.5),inset 0 1px 0 #fff8;transition:transform .15s,box-shadow .15s,filter .15s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.07);box-shadow:0 10px 26px rgba(232,196,106,.35)}
+.btn:disabled{opacity:.6;cursor:wait;transform:none}
+.link{background:none;border:0;color:var(--gold);font:inherit;cursor:pointer;text-decoration:underline;margin-top:16px;font-size:.95rem}
+
+.name-input{
+  width:100%;max-width:320px;margin:20px auto 22px;display:block;text-align:center;
+  background:rgba(0,0,0,.35);border:1px solid var(--gold-dark);border-radius:8px;color:var(--gold-light);
+  padding:12px;font:inherit;font-size:1.05rem;
+}
+.name-input::placeholder{color:rgba(255,240,184,.5)}
+.name-input:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+
+.progress{display:flex;gap:6px;justify-content:center;margin-bottom:20px}
+.dot{width:26px;height:4px;border-radius:2px;background:rgba(232,196,106,.25);transition:background .3s}
+.dot.on{background:var(--gold);box-shadow:0 0 8px var(--gold)}
+.qnum{color:var(--gold);letter-spacing:.2em;font-size:.85rem;margin-bottom:6px}
+.nominees-label{font-size:.9rem;color:var(--gold);letter-spacing:.2em;margin-bottom:12px}
+h2{font-size:clamp(1.5rem,6vw,2.2rem);font-weight:900;line-height:1.3;margin-bottom:6px}
+.options{display:grid;gap:12px;margin-top:20px}
+.opt{
+  position:relative;font-family:'Frank Ruhl Libre',serif;font-size:1.35rem;font-weight:700;color:var(--gold-light);
+  background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.15));
+  border:1px solid var(--gold-dark);border-radius:8px;padding:15px 18px;cursor:pointer;
+  transition:all .2s;opacity:0;animation:rise .5s ease forwards;
+}
+.opt:hover{border-color:var(--gold);transform:scale(1.025);box-shadow:0 0 22px rgba(232,196,106,.35)}
+.opt.picked{
+  color:#3a0508;border-color:var(--gold-light);
+  background:linear-gradient(180deg,#fff0b8,#e8c46a 55%,#b88a2a);
+  transform:scale(1.04);box-shadow:0 0 34px rgba(255,220,120,.7);
+}
+.opt.picked::after{content:"★";position:absolute;left:16px;top:50%;transform:translateY(-50%)}
+.stage.locked .opt{pointer-events:none}
+.nav{display:flex;justify-content:space-between;margin-top:18px;min-height:24px}
+.msg{margin-top:14px;font-size:.95rem;color:#ffb3b3}
+
+.spot{position:fixed;top:-10vh;width:30vw;height:130vh;z-index:0;pointer-events:none;opacity:.18;
+  background:linear-gradient(180deg,rgba(255,240,180,.9),transparent 75%);filter:blur(18px);transform-origin:top center}
+.spot.l{right:6vw;animation:sweepL 9s ease-in-out infinite alternate}
+.spot.r{left:6vw;animation:sweepR 11s ease-in-out infinite alternate}
+@keyframes sweepL{from{transform:rotate(-14deg)}to{transform:rotate(10deg)}}
+@keyframes sweepR{from{transform:rotate(14deg)}to{transform:rotate(-10deg)}}
+canvas#fx{position:fixed;inset:0;z-index:5;pointer-events:none}
+/* ===== Oscars poster style: flat deep red, thin gold sans, glossy floor ===== */
+:root{--gold:#d9b25f;--gold-light:#f1d58f;--gold-dark:#a98539}
+body{
+  font-family:'Heebo',sans-serif;font-weight:300;
+  background:radial-gradient(ellipse at 50% 38%,#b3121c 0%,#8c0b14 45%,#4a0308 100%) fixed;
+}
+body::before,body::after,.spot{display:none}
+.serif{font-family:'Heebo',sans-serif!important}
+.card{background:none;border:0;box-shadow:none;padding:20px 8px 30px}
+.card::before{display:none}
+.stage{max-width:560px}
+.gold-text{background:linear-gradient(180deg,#f6dc9a,#d9b25f 55%,#b78d3c);-webkit-background-clip:text;background-clip:text;color:transparent;filter:none}
+h1,h2{font-weight:200!important;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,10vw,3.8rem);margin:14px 0 10px}
+h2{font-size:clamp(1.5rem,6vw,2.1rem);line-height:1.4}
+.sub{font-weight:300;letter-spacing:.06em;color:var(--gold-light)}
+.eyebrow,.qnum,.nominees-label{font-weight:300;letter-spacing:.4em;font-size:.75rem;color:var(--gold)}
+.statue{width:92px;margin-bottom:10px;-webkit-box-reflect:below -2px linear-gradient(transparent 55%,rgba(255,255,255,.28));filter:drop-shadow(0 6px 14px rgba(0,0,0,.45))}
+.divider{margin:22px auto;max-width:240px}
+.divider::before,.divider::after{background:var(--gold);opacity:.6}
+.btn{font-family:'Heebo',sans-serif;font-weight:400;letter-spacing:.18em;font-size:1rem;background:none;color:var(--gold-light);
+  border:1px solid var(--gold);border-radius:0;padding:13px 36px;box-shadow:none}
+.btn:hover{background:var(--gold);color:#5a060d;box-shadow:none;filter:none}
+.opt{font-family:'Heebo',sans-serif;font-weight:300;letter-spacing:.12em;font-size:1.25rem;background:rgba(0,0,0,.12);
+  border:1px solid rgba(217,178,95,.55);border-radius:0;padding:16px 18px}
+.opt:hover{background:rgba(217,178,95,.12);border-color:var(--gold);box-shadow:none;transform:none}
+.opt.picked{background:var(--gold);color:#5a060d;font-weight:600;box-shadow:0 0 30px rgba(241,213,143,.45);transform:none}
+.name-input{background:none;border:0;border-bottom:1px solid var(--gold);border-radius:0;letter-spacing:.08em}
+.dot{height:2px;width:30px}.dot.on{box-shadow:none}
+/* ===== Luxury pass ===== */
+body,.opt,.btn,.name-input,.serif,.sub{font-family:'Rubik','Heebo',sans-serif!important}
+body{background:
+  radial-gradient(ellipse 60% 45% at 50% 30%,rgba(255,120,110,.35),transparent 70%),
+  radial-gradient(ellipse at 50% 40%,#a80f1a 0%,#7d0a13 50%,#3a0207 100%) fixed}
+/* glossy floor */
+body::before{display:block;content:"";position:fixed;left:0;right:0;bottom:0;top:auto;width:auto;max-width:none;height:26vh;z-index:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0) 0%,rgba(30,0,3,.55) 100%);
+  box-shadow:none;pointer-events:none}
+body::after{display:block;content:"";position:fixed;left:50%;bottom:0;transform:translateX(-50%);top:auto;right:auto;width:70vw;max-width:700px;height:26vh;z-index:0;
+  background:radial-gradient(ellipse at 50% 0%,rgba(255,200,120,.22),transparent 70%);box-shadow:none;pointer-events:none}
+.card{border:1px solid rgba(217,178,95,.75);outline:1px solid rgba(217,178,95,.3);outline-offset:7px;padding:34px 22px 32px;
+  background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.28));box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.card::before{display:block;inset:0;border:0;background:
+  linear-gradient(var(--gold),var(--gold)) top right/22px 1px no-repeat,linear-gradient(var(--gold),var(--gold)) top right/1px 22px no-repeat,
+  linear-gradient(var(--gold),var(--gold)) bottom left/22px 1px no-repeat,linear-gradient(var(--gold),var(--gold)) bottom left/1px 22px no-repeat;opacity:.9;margin:-1px}
+.gold-text{background:linear-gradient(100deg,#b88a2e 0%,#f7e2a0 25%,#d9b25f 45%,#fff3c4 55%,#b88a2e 80%,#f1d58f 100%);background-size:220% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite;text-shadow:none;filter:drop-shadow(0 0 14px rgba(241,213,143,.25))}
+@keyframes shine{from{background-position:120% 0}to{background-position:-100% 0}}
+h1,h2{font-weight:400!important;letter-spacing:.06em;text-transform:none}
+h1{font-size:clamp(2.6rem,11vw,4.2rem);font-weight:500!important;letter-spacing:.04em}
+h2{font-size:clamp(1.55rem,6vw,2.1rem)}
+.sub{font-weight:300;letter-spacing:.03em;font-size:1.05rem}
+.eyebrow{font-size:.9rem;letter-spacing:.5em}
+.qnum,.nominees-label{font-weight:400;letter-spacing:.25em;font-size:.8rem}
+.statue{width:104px}
+.statue.small{width:56px;margin-bottom:6px}
+.opt{font-weight:400;letter-spacing:.05em;font-size:1.2rem;padding:17px 18px;background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(0,0,0,.2));border:1px solid rgba(217,178,95,.6)}
+.opt:hover{border-color:#f7e2a0;background:linear-gradient(180deg,rgba(241,213,143,.18),rgba(241,213,143,.05));box-shadow:0 0 24px rgba(241,213,143,.2)}
+.opt.picked{background:linear-gradient(100deg,#c79a3c,#f7e2a0 50%,#c79a3c);color:#4a050b;font-weight:600;border-color:#fff3c4}
+.btn{font-weight:500;letter-spacing:.12em;border:1px solid #f1d58f;background:linear-gradient(100deg,#b88a2e,#f7e2a0 50%,#b88a2e);color:#4a050b;padding:14px 44px}
+.btn:hover{background:linear-gradient(100deg,#d9b25f,#fff3c4 50%,#d9b25f);color:#4a050b}
+.name-input{font-weight:300;letter-spacing:.04em}
+/* ===== Velvet curtain + stage light (matches reference photo) ===== */
+body{background:
+  radial-gradient(ellipse 55% 65% at 50% 30%,rgba(255,60,75,.55),transparent 72%),
+  linear-gradient(180deg,rgba(0,0,0,.75) 0%,transparent 16%,transparent 72%,rgba(0,0,0,.7) 100%),
+  linear-gradient(90deg,rgba(0,0,0,.6),transparent 18%,transparent 82%,rgba(0,0,0,.7)),
+  repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 14px,rgba(0,0,0,.42) 38px,rgba(255,150,150,.12) 54px,rgba(0,0,0,0) 84px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,.28) 0 26px,rgba(255,90,100,.14) 70px,rgba(0,0,0,.28) 121px),
+  repeating-linear-gradient(90deg,rgba(0,0,0,0) 0 47px,rgba(0,0,0,.35) 92px,rgba(255,255,255,.06) 140px,rgba(0,0,0,0) 191px),
+  #a50e1c fixed}
+body::before,body::after{display:none}
+.card{background:linear-gradient(180deg,rgba(35,0,5,.18),rgba(20,0,3,.42));-webkit-backdrop-filter:none;backdrop-filter:none;
+  border:1px solid #d9b25f;outline:1px solid rgba(217,178,95,.35);outline-offset:7px;
+  box-shadow:0 0 80px rgba(255,190,90,.18),0 30px 90px rgba(0,0,0,.7)}
+.statue{filter:drop-shadow(0 0 18px rgba(255,200,100,.55)) drop-shadow(0 8px 14px rgba(0,0,0,.6))}
+canvas#fx{z-index:5}
+/* ===== Abraham font ===== */
+@font-face{font-family:'Abraham';src:url('fonts/Abraham-Regular.woff') format('woff'),url('fonts/Abraham-Regular.ttf') format('truetype');font-weight:normal;font-style:normal;font-display:swap}
+body,.opt,.btn,.name-input,.serif,.sub,h1,h2,.eyebrow,.qnum,.nominees-label{font-family:'Abraham','Rubik',sans-serif!important}
+/* ===== Bold type ===== */
+h1,h2{font-weight:800!important;letter-spacing:.02em}
+h1{font-weight:900!important}
+.sub{font-weight:500}
+.sub b{font-weight:800}
+.eyebrow,.qnum,.nominees-label{font-weight:600}
+.opt{font-weight:600}
+.opt.picked{font-weight:800}
+.btn{font-weight:700}
+.name-input{font-weight:500}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.opt{opacity:1}}
+</style>
+</head>
+<body>
+<div class="spot l"></div><div class="spot r"></div>
+<canvas id="fx"></canvas>
+<main class="stage" id="stage"></main>
+
+<script>
+const EMAIL = "noabe307@gmail.com";
+const questions = [
+  {q:"מי הבעייתית של הקורס?", o:["מעיין","אילאי","טלולה"]},
+  {q:"מי התגלית של הקורס?", o:["דריה","שי","משי","יעל"]},
+  {q:"למי מגיע פרס מפעל החיים בקורס?", o:["תהילה","נועה","אביטל"]},
+  {q:"מי הלב הענק של המחזור?", o:["עדי","משי","ג׳אדה"]},
+  {q:"מי הכי מג׳נונה במחזור?", o:["מעיין","אילאי","תמר","נועה"]},
+  {q:"מי המוכרת הכי טובה בקורס?", o:["מעיין","נוי","נופר","שלי"]},
+];
+const statue = `<svg class="statue" viewBox="0 0 80 120" aria-hidden="true"><defs>
+<radialGradient id="ball" cx=".35" cy=".3" r=".8"><stop offset="0" stop-color="#fff7d1"/><stop offset=".5" stop-color="#e8c46a"/><stop offset="1" stop-color="#8f6a1a"/></radialGradient>
+<linearGradient id="stem" x1="0" x2="1"><stop offset="0" stop-color="#8f6a1a"/><stop offset=".5" stop-color="#fff0b8"/><stop offset="1" stop-color="#a87f22"/></linearGradient>
+<linearGradient id="wood" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#f0d27a"/><stop offset="1" stop-color="#c79a3c"/></linearGradient></defs>
+<path d="M40 6c8-2 14 3 18 8 6 2 10 9 8 16 4 6 2 15-4 19-2 7-10 11-16 9-6 4-15 2-19-4-8 0-14-8-12-15-5-5-5-14 1-19 0-8 8-13 14-11 2-2 6-3 10-3z" fill="url(#ball)"/>
+<g fill="none" stroke="#7a5a14" stroke-width="1.2" stroke-linecap="round" opacity=".55"><path d="M26 22q6 4 4 10M44 14q-2 7 5 9M56 30q-6 0-8 6M32 40q6-3 11 1M22 34q4 1 6 5M50 44q4-3 8-1"/></g>
+<g fill="#fff8d8" opacity=".8"><circle cx="30" cy="18" r="2"/><circle cx="46" cy="26" r="1.6"/><circle cx="36" cy="34" r="1.4"/></g>
+<rect x="38" y="48" width="4" height="48" fill="url(#stem)"/>
+<path d="M20 96h40l4 6v14H16v-14z" fill="url(#wood)" stroke="#8f6a1a" stroke-width="1"/>
+<rect x="16" y="102" width="48" height="2" fill="#fff0b8" opacity=".5"/></svg>`;
+const stage = document.getElementById("stage");
+const answers = new Array(questions.length).fill(null);
+let name = "", idx = 0;
+
+function dots(){return `<div class="progress">${questions.map((_,i)=>`<span class="dot ${i<=idx?"on":""}"></span>`).join("")}</div>`}
+
+function intro(){
+  stage.className="stage";
+  stage.innerHTML = `<section class="card">
+    ${statue}
+    <div class="eyebrow serif">★ ★ ★ ★ ★</div>
+    <p class="sub serif" style="font-size:1.4rem">ברוכות הבאות לטקס</p>
+    <h1 class="gold-text serif">פרכית הזהב</h1>
+    <div class="divider">✦</div>
+    <p class="sub">של קורס משווקות המחזור האחרון והכי מיוחד<br><b class="gold-text serif" style="font-size:1.6rem">לשנת 2026!</b></p>
+    <input class="name-input" id="nm" placeholder="השם שלך (לא חובה)" maxlength="40" autocomplete="name">
+    <button class="btn" id="start">בואו נתחיל</button>
+  </section>`;
+  document.getElementById("start").onclick=()=>{name=document.getElementById("nm").value.trim();idx=0;question();};
+}
+
+function question(){
+  const {q,o}=questions[idx];
+  stage.className="stage";
+  stage.innerHTML = `<section class="card">
+    ${statue.replace('class="statue"','class="statue small"')}
+    ${dots()}
+    <div class="qnum serif">שאלה ${idx+1} מתוך ${questions.length}</div>
+    <div class="nominees-label serif">★ המועמדות ★</div>
+    <h2 class="gold-text serif">${q}</h2>
+    <div class="options">${o.map((t,i)=>`<button class="opt ${answers[idx]===t?"picked":""}" style="animation-delay:${.12*i}s" data-v="${t}">${t}</button>`).join("")}</div>
+    <div class="nav"><button class="link" id="back" ${idx===0?'style="visibility:hidden"':""}>→ חזרה</button><span></span></div>
+  </section>`;
+  stage.querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(b));
+  document.getElementById("back").onclick=()=>{idx--;question();};
+}
+
+function pick(btn){
+  answers[idx]=btn.dataset.v;
+  stage.classList.add("locked");
+  stage.querySelectorAll(".opt").forEach(b=>b.classList.toggle("picked",b===btn));
+  burst(btn.getBoundingClientRect(),40);
+  setTimeout(()=>{ idx<questions.length-1 ? (idx++,question()) : review(); },750);
+}
+
+function review(){
+  stage.className="stage";
+  stage.innerHTML = `<section class="card">
+    ${statue}
+    <h2 class="gold-text serif">המעטפות מוכנות</h2>
+    <p class="sub">רגע לפני שנפתחות המעטפות – לשלוח את ההצבעה?</p>
+    <div class="divider">✦</div>
+    <div style="text-align:right;line-height:2;font-size:1.05rem">${questions.map((x,i)=>`<div><span style="color:var(--gold)">${x.q}</span> <b class="serif">${answers[i]}</b></div>`).join("")}</div>
+    <div class="msg" id="msg"></div>
+    <div style="margin-top:22px"><button class="btn" id="send">שלחי את ההצבעה</button></div>
+    <button class="link" id="redo">שינוי תשובות</button>
+  </section>`;
+  document.getElementById("redo").onclick=()=>{idx=0;question();};
+  document.getElementById("send").onclick=send;
+}
+
+async function send(){
+  const btn=document.getElementById("send"), msg=document.getElementById("msg");
+  btn.disabled=true; btn.textContent="שולחת…"; msg.textContent="";
+  const payload={_subject:`הצבעה לטקס פרכית הזהב${name?" – "+name:""}`,_template:"table",_captcha:"false","שם":name||"(לא צוין)"};
+  questions.forEach((x,i)=>payload[`${i+1}. ${x.q}`]=answers[i]);
+  try{
+    const r=await fetch("https://formsubmit.co/ajax/"+EMAIL,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(payload)});
+    const j=await r.json();
+    if(!r.ok||j.success==="false"||j.success===false) throw new Error(j.message||"fail");
+    outro();
+  }catch(e){
+    btn.disabled=false; btn.textContent="נסי שוב";
+    const body=encodeURIComponent((name?"שם: "+name+"\n":"")+questions.map((x,i)=>`${i+1}. ${x.q} ${answers[i]}`).join("\n"));
+    msg.innerHTML=`משהו השתבש בשליחה 😢 אפשר לנסות שוב או <a style="color:var(--gold-light)" href="mailto:${EMAIL}?subject=${encodeURIComponent("הצבעה לטקס פרכית הזהב")}&body=${body}">לשלוח במייל</a>`;
+  }
+}
+
+function outro(){
+  stage.className="stage";
+  stage.innerHTML = `<section class="card">
+    ${statue}
+    <h1 class="gold-text serif" style="font-size:clamp(1.8rem,7vw,2.6rem)">תודה רבההה!</h1>
+    <div class="divider">✦</div>
+    <p class="sub" style="font-size:1.25rem">את התשובות תדעי בערב סיום קורס!</p>
+    <p class="sub" style="margin-top:14px">מחכות לך בשעה <b class="gold-text serif" style="font-size:2rem">20:00</b><br>עם מלא כיף 🥂</p>
+  </section>`;
+  for(let i=0;i<5;i++) setTimeout(()=>burst({left:innerWidth*(.15+.17*i),top:innerHeight*.3,width:0,height:0},90),i*350);
+}
+
+/* gold confetti */
+const cv=document.getElementById("fx"),cx=cv.getContext("2d");let ps=[];
+function size(){cv.width=innerWidth;cv.height=innerHeight}size();addEventListener("resize",size);
+function burst(r,n){
+  const x=r.left+r.width/2,y=r.top+r.height/2,cols=["#fff0b8","#e8c46a","#b88a2a","#ffd86b","#ffffff"];
+  for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,s=2+Math.random()*7;
+    ps.push({x,y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-3,w:4+Math.random()*5,h:3+Math.random()*4,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:cols[i%cols.length],l:1});}
+  if(ps.length===n)loop();
+}
+function loop(){
+  cx.clearRect(0,0,cv.width,cv.height);
+  ps=ps.filter(p=>p.l>0);
+  ps.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.vx*=.99;p.r+=p.vr;p.l-=.011;
+    cx.save();cx.globalAlpha=Math.max(p.l,0);cx.translate(p.x,p.y);cx.rotate(p.r);cx.fillStyle=p.c;cx.fillRect(-p.w/2,-p.h/2,p.w,p.h);cx.restore();});
+  if(ps.length)requestAnimationFrame(loop);else cx.clearRect(0,0,cv.width,cv.height);
+}
+intro();
+</script>
+</body>
+</html>
