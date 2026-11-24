@@ -235,10 +235,18 @@ function intro(){
     <h1 class="gold-text serif">פרכית הזהב</h1>
     <div class="divider">✦</div>
     <p class="sub">של קורס משווקות המחזור האחרון והכי מיוחד<br><b class="gold-text serif" style="font-size:1.6rem">לשנת 2026!</b></p>
-    <input class="name-input" id="nm" placeholder="השם שלך (לא חובה)" maxlength="40" autocomplete="name">
+    <input class="name-input" id="nm" placeholder="השם שלך" required maxlength="40" autocomplete="name">
     <button class="btn" id="start">בואו נתחיל</button>
   </section>`;
-  document.getElementById("start").onclick=()=>{name=document.getElementById("nm").value.trim();idx=0;question();};
+  const nmEl=document.getElementById("nm");
+  nmEl.value=name;
+  const go=()=>{
+    const v=nmEl.value.trim();
+    if(!v){nmEl.style.borderBottomColor="#ff8a8a";nmEl.placeholder="נא להכניס שם כדי להתחיל";nmEl.focus();return;}
+    name=v;idx=0;question();
+  };
+  document.getElementById("start").onclick=go;
+  nmEl.addEventListener("keydown",e=>{if(e.key==="Enter")go();});
 }
 
 function question(){
